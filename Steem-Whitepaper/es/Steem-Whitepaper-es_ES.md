@@ -1,4 +1,3 @@
-	Steem White Paper #spanish translation effort 
 # Steem
 ## Una plataforma de "social media", basada en blockchain, con incentivos.
 
@@ -316,6 +315,48 @@ Esto es similar al *Bitcoin* encomendado premios de 50 BTC a quien encuentre los
 
 El próximo paso es premiar con algo a cada uno que haga algo aunque sea remotamente positivo. Esto se logra clasificando todo el trabajo hecho y distribuyendo proporcionalmente a su valor. Mientras más competitivo se vuelva el mercado (mayor calidad o cantidad), más difícil se torna recibir el mismo pago.
 
+### 4.5.2 - Votando sobre la distribución de la moneda
+
+Asumiendo que hay un monto fijo de dinero para distribuir, y que aquéllos que tienen intereses creados a largo plazo en el valor a futuro y utilidad de la moneda son quienes deben decidir como distribuirlo. Todos los usuarios con inversión emiten sus votos a quien haya hecho el mejor trabajo y al final del dia el dinero disponible para ese día es dividido proporcionalmente a los votos de manera que todos los que tengan al menos un voto positivo neto, obtiene algo.
+
+El proceso de voto inocente genera un Dilema del Prisionero, donde cada votante individualmente tiene incentivo para votarse a si mismo a expensa del objetivo del resto de la comunidad. Si cada votante se votara a si mismo entonces no habría dinero distribuído y la moneda entera fallaría en ganar efecto de red. Por otro lado, si sólo un votate se autovota, entonces él obtendría ganancias no merecidas mientras el efecto en el valor total de la moneda sería mínimo.
+
+Para realinear lso incentivos y desalentar a los individuos de simplemente autovotarse, el dinero debe ser distribuído de manera no linear. Por ejemplo una función cuadrática en los votos, ej.: alguien con el doble de votos que otro debería recibir cuatro veces el valor del pago y alguien con tres veces mas de votos debería recibir nueve veces el pago. En otras palabras, el premio es proporcional a los *votos x votos* (al cuadrado), en lugar de a la cantidad de votos. Esto espeja el valor del efecto de red, que crece con *n x n* el número de participantes, de acuerdo al Ley de Metcalfe[5].
+
+Asumiendo que todos los usuarios poseen la misma cantidad de fondos, alguien que sólo se autovota recibirá menos que alguien que recibe votos de 100 usuarios distintos. Esto alienta a los usuarios a coooperar para votar las mismas cosas para maximizar el pago. El sistema también crea incentivos financieros para los usuarios *confabularse* en donde votar y luego dividirse el premio equitativamente entre ellos.
+
+	[5] Metcalfe’s Law https://en.wikipedia.org/wiki/Metcalfe%27s_law
+    
+#### 4.5.2.a - Complicidad en la votación
+
+Mientras la cooperación para distribuír fondos al mejor trabajo es el objetivo deseado, la confabulación que socabe éste objetivo debería ser minimizada. Hay dos tipos de complicidad o confabulación, la más directa es cuando un usuario simplemente compra un mayor monto que otros, y los otros se involucran coordinando un largo número de partes interesadas para trabajar juntos. Un conjunto mas grande de partes interesadas puede tener una influencia de voto de 100 o incluso 1000 interesados mas pequeños lo que significa que éstos tienen un incentivo aún mas grande para autovotarse que si estuvieran en una distribución linear.
+
+Independiente de cuánto dinero tenga cualquier individuo, siempre hay varios otros individuos con riquezas similares. Incluso el individuo más enriquecido raramente tiene mucho mas que la combinación de los que le siguen en cantidad de riquezas. Incluso, aquéllos que tienen una gran inversión en una comunidad también tienen más riesgo de perder al intentar jugarle al sistema de votos para su beneficio. Sería como si el CEO de una compañía decidiese dejar de pagar salarios para guardarse las ganancias en su bolsillo. Todos dejaría de trabajar y se irían a otras compañías y su empresa quedaría vacía y sin valor, dejando al CEO en bancarrota en lugar de rico.
+
+Afortunadamente, cualquier trabajo que esté obteniendo una gran concentración de votos también gana más escrutiño (publicidad). A través de la adición de votación negativa es posible para participantes de menor talla nulificar el poder de voto de grupos confabulado o contrarrestar a los grandes poseedores. Tambipen, los grandes poseedores tienen mas para perder si la oneda falla en su valor debido a abusos de lo que pueden ganar por autovotarse. De hecho, los grandes poseedores honestos son usualmente mas efectivos en castigar el abuso y usando votos negativos de lo que serían al votar contribuciones mas pequeñas.
+
+El uso de votos negativos para evitar que la gente abuse el sistema apalanca la mentalidad "cangrejo" que muchas personas poseen cuando se percibe que un individuo está obteniendo ganancias a expensas de los demás. Mientras la mentalidad de "cangrejo" normalmente se refiere a personas de corta visión detrimentando a las buenas personas, también permite a las buenas personas mantener a las malas abajo.
+
+El único "problema" con la mentalidad de cangrejo es cuando la gente cree equivocadamente que alguien está beneficiándose a expensas del resto.
+
+###### La Historia de la cubeta de cangrejos [6]
+
+*Un hombre se encontraba caminando por la playa y vió a otro hombre pescando en el muelle con una cubeta a su lado. A medida que se acercaba, vió que la misma estaba destapada y tenía cangrejos vivos en su interior.
+"¿Por qué no tapa su cubeta para que no escapen los cangrejos?", preguntó.
+"No entiendes.", respondió el pescador, "Si hay sólo un cangrejo en la cubeta, éste trepará y escapará rápidamente, sin embargo, cuando hay muchos cangrejos en ésta, si uno trata de trepar por un lado, los demás lo tomarán y lo devolverán adentro para que sufra el mismo destino que el resto."*
+
+También sucede con las personas. Si uno intenta hacer algo diferente, obtener mejores notas, mejorarse, escapar a su entorno, soñar en grande, otras personas intentarán arrastrarlo abajo y compartir su destino.
+
+Eliminar el "abuso" no es posible y tampoco debería ser el objetivo. Incluso aquellos quienes intentan "abusar" del sistema también están trabajando. Cualquier compsensación que obtengan por sus intentos satisfactorios de abusar o confabularse es cuando menos valioso para el propósito de de distribuír la moneda como en el sistema de trabajo empleado por la minería tradicional de *Bitcoin* o de minería confabulada a través de *pools* de minado. Todo eso es necesario para asegurar que el abuso no sea tan rampante como para socabar el incentivo para realizar verdadero trabajo de soporte de la comunidad y su moneda.
+
+La meta de desarrollar una moneda comunitaria es obtener mas "cangrejos en la cubeta". Tomar medidas extremas para eliminar todo abuso es como intentar poner una tapa en la cubeta para prevenir que se escapen algunos cangrejos y viene a expensas de hacerlo mas difícil de agregar nuevos integrantes. Alcanza con hacer las paredes resbaladizas y dar a otros "cangrejos" el suficiente poder para prevenir que otros "escapen".
+
+	[6] The Story of the Crab Bucket, http://guidezone.e-guiding.com/jmstory_crabs.htm
 
 
 
+
+
+
+
+    
