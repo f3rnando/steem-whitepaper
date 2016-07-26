@@ -39,7 +39,7 @@ Steem es una base de datos blockchain que permite la contrucción comunitaria e 
 		- 4.5.5 Distribución de pagos
 			- a. Recompensas para posts padres.
         - 4.5.6 Pagos
-    4.6 Algoritmo de consenso
+    - 4.6 Algoritmo de consenso
     	- 4.6.1 Consenso en Steem
     	- 4.6.2 Minando en Steem
     		- a. Premios de minado requieren Steem Power
@@ -403,3 +403,37 @@ Esta estructura de incentivo motiva a la gente a contribuír de forma que motiva
 ### 4.5.6 - Pagos
 
 Cuando un post recibe un pago, éste toma la forma de 50% de SMD y 50% de SP. El Steem Power da al usuario un poder aumentado de voto y transacción mientras que el SMD da al usuario un beneficio inmediato en una moneda estable. Como ya hemos analizado en profundidad, tanto el SP como el SMD están diseñados para alentar la posesión a largo plazo en lugar de la venta a corto plazo.
+
+## 4.6 - Algoritmo de consenso
+
+El consensor es el proceso por el cual una comunidad llega a un acuerdo no ambiguo y universalmente reconocido sobre una pieza de información. Hay muchos algoritmos desarrollados por la sociedad para alcanzar consenso sobre quién es dueño de qué. Cada gobierno en la tierra es un algoritmo de consenso primitivo con el cual la población acuerda atenerse a cierto conjunto de reglas encapsuladas en una Constitución. los gobiernos establecen cortes, jueces y jurados para interpretar hechos subjetivos y emitir una decisión final. La mayoría de las veces la gente se atiene a estas decisiones incluso si son erróneas.
+
+Los algoritmos utilizados por las criptomonedas proveen una mejor forma para alcanzar consenso. Testimonios criptográficamente firmados por individuos son registrados en un registro público que establece un orden global absoluto de eventos. Una algoritmo computacional determinístico puede procesar este registro para derivar una conclusión universalmente aceptada. En tanto los miembros de una comunidad estén de acuerdo en el algoritmo de proceso, el resultado de dicho algoritmo es autoritario.
+
+La consideración primaria es determinar qué testimonio es permitido para entrear el registro público. Los sistemas deberían ser diseñados para minimizar el potencial para su censura. La censura en el registro público es similar a prevenir que alguien vote en una elección. En ambos casos un individuo tiene su impacto en el consenso global imposibilitado.
+
+### 4.6.1 - Consenso en Steem
+
+Conceptualmente, el algoritmo de consenso adoptado por Steem es similar al algoritmo de consenso adoptado por compañías de todo el mundo. Gente con interés invertido en el valor futuro de Steem, vota para elegir individuos responsables de incluír testimonios en el registro público. El peso del voto es determinado proporcionalmente al interés invertido de cada individuo.
+
+En el mundo de las criptomonedas, se refiere comunmente al registro público como *blockchain*. Un *block* o bloque es un grupo de transacciones firmadas (testimonios).
+
+Con Steem, la producción de bloques es realizada en rondas. En cada ronda se seleccionan 21 testigos para crear y firmar bloques de transacciones. Diecinuevo (19) de éstos testigos son seleccionados para aprobar las votaciones, uno es seleccionado por una prueba-de-trabajo computacional (*Proof of work*), y un puesto es compartido por tiempo por cada testigo que no logró entrar en el *top* 19 proporcional de mas votados. Los 21 testigos activos son mezclados en cada ronda para prevenir que cualquiera de los testigos ignore constantemente bloques producidos por el mismo testigo ubicado anteriormente en ese puesto.
+
+Este proceso está diseñado para proveer la mejor confiabilidad mientras se asegura que todos tengan potencial para participar en la producción de bloques independientemente de si son suficientemente populares para ser votados dentro de la lista de los 19 testigos principales elegidos: pacientemente esperan en línea con todos los demás que no estén entre los 19 principales, compran suficiente poder computacional para resolver una prueba de trabajo (*proof of work*) mas rápido que otros, o compran mas SP para mejorar su poder de voto. Generalmente hablando, aplicar censura es una buena forma de elegir testigos para perder su trabajo y por lo tanto, es improbable que sea un problema real en la red de Steem.
+
+Debido a que los testigos activos son conocidos de antemano, Steem puede acomodar los testigos para producir bloques cada 3 segundos. Los testigos sincronizan sus producción de bloques a través del protocolo NTP. Una variante de este algoritmo ha sido utilizada por la red BitShares por alrrededor de una año donde ha demostrado ser confiable.
+
+### 4.6.2 - Minando en Steem
+
+Los blockchains de prueba de trabajo (*PoW* ó *Proof of work*) tradicionales combinan la producción de bloques con la solución de una prueba de trabajo. Debido a que el proceso de resolver una prueba de trabajo toma una cantidad impredecible de tiempo, el tiempo de producción de bloques resulta también indeterminado. Steem apunta a tener una producción confiable y consistente cada 3 segundos casi sin potencial de *forks* o desvíos.
+
+Para lograr ésto, Steem separa la producción de bloques de la solución de pruebas de trabajo. Cuando un minero resuelve una prueba de trabajo para Steem, éste emite una transacción que contiene el trabajo o resultado. El próximo testigo programado lo incluye entonces en el blockchain. Cuando la transacción es efectivamente incluída el minero es añadido a la cola de mineros programados para producir bloques. Cada ronda un minero salta de la cola y es incluído en el conjuto activo de testigos. El minero obtiene el pago cuando éstos producen un bloque en el tiempo que tienen programado. 
+
+La dificultad de la prueba de trabajo se duplica cada vez que el largo de la cola crece por 4. Debido a que un minero sale de la cola a cada ronda, y cada ronda toma 21 * 3 = 63 segundos, la dificultad automáticamente se divide si no se resuelve una prueba de trabajo en no más de 21 * 3 * 4 = 252 segundos.
+
+
+
+
+
+
