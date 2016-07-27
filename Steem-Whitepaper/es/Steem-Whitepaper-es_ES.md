@@ -406,7 +406,7 @@ Cuando un post recibe un pago, éste toma la forma de 50% de SMD y 50% de SP. El
 
 ## 4.6 - Algoritmo de consenso
 
-El consensor es el proceso por el cual una comunidad llega a un acuerdo no ambiguo y universalmente reconocido sobre una pieza de información. Hay muchos algoritmos desarrollados por la sociedad para alcanzar consenso sobre quién es dueño de qué. Cada gobierno en la tierra es un algoritmo de consenso primitivo con el cual la población acuerda atenerse a cierto conjunto de reglas encapsuladas en una Constitución. los gobiernos establecen cortes, jueces y jurados para interpretar hechos subjetivos y emitir una decisión final. La mayoría de las veces la gente se atiene a estas decisiones incluso si son erróneas.
+El consenso es el proceso por el cual una comunidad llega a un acuerdo no ambiguo y universalmente reconocido sobre una pieza de información. Hay muchos algoritmos desarrollados por la sociedad para alcanzar consenso sobre quién es dueño de qué. Cada gobierno en la tierra es un algoritmo de consenso primitivo con el cual la población acuerda atenerse a cierto conjunto de reglas encapsuladas en una Constitución. los gobiernos establecen cortes, jueces y jurados para interpretar hechos subjetivos y emitir una decisión final. La mayoría de las veces la gente se atiene a estas decisiones incluso si son erróneas.
 
 Los algoritmos utilizados por las criptomonedas proveen una mejor forma para alcanzar consenso. Testimonios criptográficamente firmados por individuos son registrados en un registro público que establece un orden global absoluto de eventos. Una algoritmo computacional determinístico puede procesar este registro para derivar una conclusión universalmente aceptada. En tanto los miembros de una comunidad estén de acuerdo en el algoritmo de proceso, el resultado de dicho algoritmo es autoritario.
 
@@ -432,7 +432,58 @@ Para lograr ésto, Steem separa la producción de bloques de la solución de pru
 
 La dificultad de la prueba de trabajo se duplica cada vez que el largo de la cola crece por 4. Debido a que un minero sale de la cola a cada ronda, y cada ronda toma 21 * 3 = 63 segundos, la dificultad automáticamente se divide si no se resuelve una prueba de trabajo en no más de 21 * 3 * 4 = 252 segundos.
 
+#### 4.6.2.a - Premios de minado requieren Steem Power
 
+Luego del primer mes, a los minadores de Steem se les paga en Steem Power (SP). El Steem Power es liquidado a través de un proceso de dos años de "powering down". Esto significa que los mineros deben esperar un buen tiempo, seguramente varios meses, antes de que suficientes premios de minado hayan sido desactivados ("powered down") para permitirles recuperar el costo de electricidad y recursos computacionales. El proceso de *powering down* desalienta la creación de *pool* de minado porque el operador del *pool* debería tener que repartir los pagos entre años.
+
+El efecto de pagar los premios de minado en SP es la prevención de la utilización del precio diario por parte de los mineros para determinar la ganancia del proceso de minado. Pocos estarán de acuerdo en cuál será el precio en el futuro.
+Esto quiere decir que la dificultad será determinada por aquellos que depositen mayor estima en el valor a futuro. Los mineros sin un interés en la plataforma a largo plazo serán desalentados de competir. Finalmente se logra que las procedencias de minar sean menos tendientes a ser extraídas del mercado debido a que éstas serán acumuladas por los creyentes de la plataforma a largo plazo.
+
+#### 4.6.2.b - Algoritmo de minado
+
+El algoritmo de minado adoptado por Steem requiere que el minero tenga acceso a la clave privada de la cuenta que recibirá los premios. Este requerimiento tiene varias consecuencias importandes. Primero alienta la optimización de los algoritmos de verificación de la firma de curva elíptica requerida por Steem. Segundo, hace más desafiante la instalación de *pools* de minado porque el operador del mismo debería compartir el control de la ganancia con mineros "anónimos". Tercero, dificulta el uso de botnets al hacer que operador necesite distribuír su llave privada a todas las máquinas comprometidas.
+
+El siguiente pseudocódigo describe cómo se calcula el valor del hash de la prueba de trabajo (*proof of work*):
+
+```
+Let H = Head Block ID
+Let H2 = SHA256(H+NONCE)
+Let PRI = Producer Private Key
+Let PUB = Producer Public Key
+Let S = SIGN(PRI, SHA256( H ) )
+Let K = RECOVER_PUBLIC_KEY( H2, S )
+Let POW = SHA256( K )
+```
+
+#### 4.6.2.c - Resistencia a Botnets
+
+Muchas monedas basadas en prueba de trabajo terminan siendo minadas por *botnets*. Una *botnet* es una colección de miles o millones de máquinas que han sido comprometidas por intrusos informáticos. Estos intrusos roban los recursos computacionales y eléctricos de dichas máquinas comprometidas para minar *tokens* de criptomoneda.
+
+Steem posee varias propiedades que previenen que éstos ladrones computacionales obtengan beneficios. Los operadores de las *botnets* son "empresas" que buscan lucro y típicamente venden sus recursos robados al mayor postor. Esto significa que aquellos que utilizan una *botnet* pagan el poder computacional de la misma forma que lo hace alguien usando el servicio EC2 de Amazon. El requerimiento para impulsar Steem significa que el capital gastado en comprar recursos de la *botnet* estarán atados por un período durante el cual el operador se expone a la volatilidad de los precios.
+
+Otra forma en que se previene que los operadores de las *botnets* obtengan ganancias es la necesidad de que el mismo deba distribuír la llave privada a todas las máquinas comprometidas. Si al menos una de éstas computadoras es descubierta, el operador podría perder las monedas ganadas por toda la *botnet*.
+
+La última mitigación es la dependencia en la latencia. La mayoría de las *botnets* comprometen computadoras con una conexión a internet pobre, éstas conexiones lentas reducen drásticamente la efectividad del recurso computacional.
+
+Debería ser mas conveniente y menos riesgoso para los operadores de *botnets* usar estos recursos para otras actividades que no sean minar STEEM.
+
+#### 4.6.2.d - Resistencia a grupos o *pools* de minado
+
+Los minadores tienen un total de 3 segundos para recibir un bloque, resolver la prueba de trabajo, y obtener la transacción al siguiente productor de bloque. Gran parte de este tiempo se irá en la latencia de la red, lo que implica que es crítico para los mineros poseer buena conexión a la red para lograr un uso efectivo de sus recursos computacionales.
+
+Debido al constante cambio del bloque de cabecera y la latencia de la red, reenviar una plantilla para minar un bloque específico a los participantes del *pool* o grupo de minado agrega latencia adicional y reduce significativamente la eficiencia del minado en grupo (*pool mining*).
+
+### 4.6.3 - Eliminando comisiones de transacción
+
+Steem va más allá para beneficiar a quienes contribuyen a la red. Sería contraproducente dar la espalda y cobrar a los usuarios cada vez que intentan interactuar con la comunidad.
+
+La tecnología blockchain actualmente depende de comisiones de transacción para prevenir spam. Estas comisiones sufren de todos los problemas conocidos con las microtransacciones y previenen que los blockchains sean usados para transacciones de bajo costo. Las aplicaciones verdaderamente descentralizadas deben ofrecer a los usuarios el atractivo de transacciones gratuitas si se desea competir ante sus alternativas centralizadas. Este documento explica el método utilizado por Steem para eliminar la necesidad de comisiones y por ende habilitar un amplio rango de aplicaciones anteriormente inviables de manera descentralizada.
+
+#### 4.6.3.a - El problema de las comisiones
+
+Los blockchains son redes descentralizadas donde todas las transacciones son emitidas a todos los pares (*peers*). Cada tanto se produce un bloque que incluye alguna o todas las transacciones pendientes. Todos los blockchains deben encontrar una solución para prevenir que usuarios maliciosos consuman todo o gran parte de la capacidad disponible de la red con transacciones sin valor o inútiles. Estas transacciones sin valor evitan que transacciones valiosas y útiles sean procesadas en detrimento de la red.
+
+La solución adoptada por la mayoría de los blockchains hasta ahora es cargar una comisión mínima de transacción. Una comisión con un costo de unos pocos centavos es suficiente para lograr que atacar la red no sea redituable e incluso costoso. Mientras ésta solución resuelve el problema del *spam*, introduce nuevos problemas. Imagine resolver el problema del *spam* en emails introduciendo una pequeña comisión en cada correo enviado; la gente no usaría el correo electrónico.
 
 
 
