@@ -61,9 +61,9 @@ Steem es una base de datos blockchain que permite la contrucción comunitaria e 
                     - b.b.c Comparación a comisiones
                 - b.c Creación de cuenta
                 - b.d Justificando balances mínimos
-                - b.c Ajustando relación de reserva
-                - b.d Efectividad relativa a comisiones
-                - b.e Renta vs. Compra vs. Tiempo compartido
+                - b.e Ajustando relación de reserva
+                - b.f Efectividad relativa a comisiones
+                - b.g Renta vs. Compra vs. Tiempo compartido
             - c. Performance y Escalabilidad
             	- c.a Escala Reddit
             - d. Asignación y suministro
@@ -579,18 +579,149 @@ Todos los estimados de arriba son cotas superiores conservativas asumiendo que l
 > [10] Bitcoin Estimated Transaction Volume
 https://blockchain.info/charts/estimated-transaction-volume?showD
 
-##### Impacto de capacidad
+###### Impacto de capacidad
 
 La capacidad del blockchain no está necesariamente limitada. Está bien dentro de la capacidad tecnológia de la infraestructura internet incrementar el tamaño de bloque de Bitcoin a 10MB lo que en cambio reducirá el balance mínimo requerido por un factor de 10. Mientras Bitcoin actualmente soporta aproximadamente 3 transacciones por segundo, implementaciones alternativas pueden permitir mas de 1000 transacciones por segundo. Esto modifica nuestra cota superior a 0.0006 BTC, queriendo decir que una cuenta que contenga 0.0006 BTC tendrá la posibilidad de transaccionar al menos una vez por semana en promedio (y posiblemente muchas mas veces porque estamos lidiando con una cota superior mas permisiva).
 
-##### Número máximo de usuarios únicos
+###### Número máximo de usuarios únicos
 
 Podemos utilizar una matemática similar para calcular el número máximo de usuarios únicos que la red puede permitir transaccionar una vez por semana como: B * W / T. *T* representa el promedio de tamaño de transacción. Esto quiere decir que Bitcoin podría soportar alrrededor de 2 millones de usuarios transaccionado una vez por semana asumiendo que cada usuario tuviese el mismo balance.
 
-##### Comparación de comisiones
+###### Comparación de comisiones
 
-Si asumimos que un usuario con $25 dólares en BTC transacción una vez por semana y paga una comisión de $0.04 cada vez entonces ellos pagarían mas de $2 en comisiones por año. Un usuario tendría que ganar una tasa de retorno de 8% sobre sus $25 sólo para no salir perdiendo al pagar comisiones. Todo indica que los usuarios van a mantener su dinero en el blockchain de todas formas, entonces este usuario con $25 en BTC ha ahorrado $2 en el transcurso de un año al adoptar una propuesta de tasa limitada en lugar de una libre de comisiones. Con solo $175 podrían transaccionar todos los días y ahorrar $14 al año.
+Si asumimos que un usuario con $25 dólares en BTC transacciona una vez por semana y paga una comisión de $0.04 cada vez entonces ellos pagarían mas de $2 en comisiones por año. Un usuario tendría que ganar una tasa de retorno de 8% sobre sus $25 sólo para no salir perdiendo al pagar comisiones. Todo indica que los usuarios van a mantener su dinero en el blockchain de todas formas, entonces este usuario con $25 en BTC ha ahorrado $2 en el transcurso de un año al adoptar una propuesta de tasa limitada en lugar de una libre de comisiones. Con solo $175 podrían transaccionar todos los días y ahorrar $14 al año.
+
+##### Creación de cuenta
+
+El sistema de Steem, basado en cuentas de con balances públicamente conocidos simplifica la implementación del algoritmo de limitación de tasa basado en el ancho de banda. Cualquier cuenta con un balance por debajo del mínimo requerido para transaccionar una vez por semana no debería poder transaccionar. Esto implica que todas las nuevas cuentas deberían ser cargadas con al menos éste balance mínimo. Esto tambien implica que los usuarios deseando transaccionar en montos menores puedan, mientras mantengan un balance mayor y reutilicen la cuenta.
+
+Es posible para una cuenta con balance bajo creada durante un tiempo de bajo uso volverse inaccesible si el uso de la red se dispara. Los fondos podrían ser recuperados en cualqueir momento transfiriendo un balance mayor a la cuenta.
+
+Con el fin de mantener una experiencia de usuario razonable con un mínimo de cuentas colgadas, todas las nuevas cuentas debe comenzar con un balance 10 veces el mínimo requerido para transaccionar por semana. De esta forma si la demanda se incrementa por un factor de 10, la cuenta continuará utilizable.
+
+Cualquier balance de cuenta inicial debería tener que venir del usuario creando la cuenta y no de la creación de *token* debido al peligro de ataques de identidad (*Sybil attacks*)
+
+##### Justificando balances mínimos
+
+El concepto de forzar a los usuarios a mantener un balance mínimo fluye naturalmente del valor de un usuario[11]. Cualquier corriendo un negocio sabe que cada usuario tiene un valor significativo.
+
+Los negocios gastan entre $30 y $200 para adquirir un usuario. A veces pagan usuarios directamente, otras veces pagan por publicidad, e incluso otras veces compañías enteras son adquiridas solo por su base de usuarios. Luego de que una compañía adquiere un usuario generalmente le otorga varios servicios gratuitos para mantenerlos cerca lo suficiente para monetizarlos a través de otros medios.
+
+Ripple usa un balance mínimo [12] que escala al uso de recursos de la cuenta y requiere que nuevas cuentas sean fundadas con al menos éste balance mínimo. Actualmente este balance mínimo es de alrrededor de $0.15, el cual es mayor al $0.10 que estimamos que permitiría a alguien transaccionar libremente al menos una vez por semana.
+
+Un blockchain puede imponer un valor mínimo por usuario a través del simple proceso de requerir un balance mínimo. Cualquier negocio que desee traer un nuevo cliente al blockchain puede precargar esa cuenta con un balance mínimo que le permitiría transaccionar. Requiriendo una comisión relativamente grande ($1.00) para registrar nuevos usuarios naturalmente forzará a cualquiera que ofrezca cuentas gratis considerar la calidad y singularidad de cada cuenta antes de registrarlas con el blockchain.
+
+Mantener un balance mínimo es efectivamente lo mismo que hacer que los usuarios paguen comisiones de transacción con el interés que podrían haber ganado en su balance. El balance mínimo es simplemente el balance requerido para ganar suficiente interes para pagar una comisión en un período de tiempo relativamente corto. 
+
+Afortunadamente, el balance mínimo requerido puede ser tan bajo como un dólar y ésto es algo que los usuarios pueden entender y apreciar. El costo de oportunidad de interés perdido no incurre en el costo cognitivo de una microcomisión y es mucho mas aceptable para los usuarios.
+
+El STEEM usado para precargar una cuenta es convertido a Steem Power en la nueva cuenta (ej.: *Powering Up*)
+
+> [11] Forbes, Tristan Louis, “How Much is a User Worth?”
+http://www.forbes.com/sites/tristanlouis/2013/08/31/how-much-is-a-us
+
+> [12] Ripple, Account Reserves
+https://ripple.com/build/reserves/
+
+##### Ajustando relación de reserva
+
+Limitar la tasa requiere que la red ajuste la tasa de reserva lo suficientemente rápido para mitigar el impacto de un atacante intentado inundar la red. Asumamos que el atacante tiene un gran balance, digamos que el 1% de los *tokens* disponibles. Si tambien asumimos que la red apunta al 50% de utilización, entonces el ataque sostenido debería encontrar a este usuario estrangulado al 25% de la capacidad asumiendo que todos tambien esten utilizando 25% de la capcidad. Dicho de otra forma, el usuario mas grande nunca debería poder consumir mas del 50% de la capacidad pretendida salvo que posea mas del 50% del SP (*Steem Power*)  
+
+Usemos una tasa de reserva inicial de 200x. Debido a las reservas fraccionales, ésto significa que cualquiera que tenga el 1% de los *tokens* tiene el derecho de demandar transacciones con un total de 2 veces el tamaño máximo de bloque. Para llevar el uso de la red por parte del atacante al 25%, la tasa de reserva debería caer a 25x. Esto causaría que el balance mínimo requerido para transaccionar una vez por semana crezca a 8 veces el mismo.
+
+El blockchain puede establecer una tasa de respuesta que indique cualquier incremento sostenido en el uso debería ser rebajado a la capacidad pretendida dentro de un período de tiempo corto (digamos 30 segundos). Un atacantes intentando hacer spam en la red no debería poder afectar el servicio a los usuarios normales por mas de un minuto.
+
+Mientras las reducciones en la tasa de reserva deben contrarestar el abuso ráidamente y de forma no-linear, los incrementos en la tasa de reserva deben ser lentos y lineales. Si la red se ajusta en ambas direcciones en 30 segundos entonces el atacante podría dar pulso a la red. Una inundación de transacciones deberpia ser corregida en 30 segundos y luego tomar una hora para volver a los niviles previos al ataque. Bajo este modelo, el atacante puede inundar la red por 30 segundos por cada hora o menos del 1% del tiempo.
+
+Debe haber una presión lenta en subida constate sobre la tasa de reserva cuando el uso de la red esté por debajo del 50% hasta que la red alcance la tasa de reserva máximo. La tasa máxima de reserva determina la apuesta mínima requerida para inundar la red en ráfagas cortas.
+
+Cualquier usuario con menos que TOTAL_DE_TOKENS / (2 * TASA_DE_RESERVA) no podrá producir suficientes transacciones para llenar ni un sólo bloque. Con una tasa de reserva de 200, significa que cualquier usuarios con menos de 0.25% de la moneda no puede crear suficientes transacciones para retrasar el servicio de nadie.
+
+##### Efectividad relativa a comisiones
+
+Para comparar la efectividad de la tasa de limitación a comisiones debemos considerar cuánto ambos sistemas reaccionan a la inundación intencional de la red por parte de un atacante. En Bitcoin, un atacante con $10.000 puede afectar el servicio por un día entero llenando cada bloque. El mismo atacante no podría afectar el servicio ni siquiera durante un bloque bajo la propuesta de tasa de limitacion de reserva fraccional dinámica.
+
+Si vamos a un caso mas extremo y asumimos que el atacante posee el 1% de todas las monedas entonces asumimos un atacante con 60 millones dólares. Tal atacante podría denegar el servicio del blockchain de Bitcoin por 16 años a no ser que los minadores aumentes las comisiones o la capacidad. Incluso si las comisiones fueren incrementadas a $15 por transacción, el atacantes podría aún continuar afectando la red por 16 dias.
+
+Bajo el enfoque de limitación de tasa, alguien que posea el 1% de todas las monedas con intenciones de inundar la red lograría su objetivo por menos de 30 segundos.
+
+##### Renta vs. Compra vs. Tiempo compartido
+
+Cuando alguien es dueño de una casa espera el derecho de uso de la misma de forma gratuita. Si un frupo de gente compra una casa en conjunto entonces ellos pueden pretender el derecho de usarla proporcionalmente al porcentaje que les corresponda de la casa. Un blockchain basado en comisiones es como rentar la casa a sus propios dueños, donde limitar la tasa es como dividirse  el tiempo de uso entre los propietarios.
+
+Si una casa es propiedad de múltiples personas, ellos deben decidir como desean compartir la casa. Alguien que tenga el 50% de la propiedad pero sólo la utiliza un fin de semana por año podría esperar que los individuos le paguen por el tiempo sin usarla. Esta es la idea de un sistema basado en comisiones.
+
+Por otro lado, alguien que posea el 50% de la casa está especulando que la demanda por la casa aumente en el futuro y ellos podrán vender su parte por más. Cualquier dueño que posea mas de la casa de lo que utiliza se convierte en un especulador de bienes raíces. Con esta idea en lugar de recolectar renta, recolecta apreciación.
+
+El valor de una acción procede de cuanto tiempo tiempo puede potencialmente otorgar a su propietario. Poseer el 1% de una casa y obtener un fin de semana por año es el valor mas bajo de una acción. Sin embargo, si la mitad de los propietarios nunca utilizan su fin de semana, entonces el valor por tiempo compartido aumenta a 2 fines de semana por año. Si aquellos usuarios inactivos optan por rentar su tiempo sin uso, entonces éste baja nuevamente a 1 fin de semana por año. Si esos tiempos sin usar fuesen vendidos a gente que los usara entonces el valor del tiempo compartido caería un 50%. A menos que la renta recolectada sea mayor que la caída del valor de las acciones, los dueños del tiempo compartido estarán cometiendo un error de cálculo económico.
+
+Usando esta racional podemos asumir que un sistema basado en comisiones será mas caro para sus usuarios o ser menos redituable para sus propietarios colectivos. Un propietario individual pequeño puede obtener ganancias al rentar su pequeña porción de tiempo, pero solo a expensa de todos los demás dueños. En efecto, el costo del decreciente valor del tiempo compartido es repartido entre todos los propietarios donde las ganancias son centralizadas en el dueño singular que decidió rentar su parte.
+
+Podemos concluír de ésto que un blockchain es mejor servido si no se usa ninguna comisión. Si una comisión de uso fuese cobrada como una alternativa de tasa limitante, entonces debería ser equivalente a comprar el tiempo compartido suficiente y disponerse a mantenerlo el tiempo suficiente para ganar el derecho a usarlo una sola vez.
+
+Dicho de otra forma, una comisión de transacción debería equivaler al balance mínimo de cuenta necesario para transaccionar una vez por semana y debería ser recargado al final de la semana.
+Asumamos que el mínimo balance de cuenta es $1 y permite a alguien transaccionar una vez por semana. Si alguien con un balance de $1 desea concretar 5 transacciones de una sola vez, tendrá que incrementar su balance a $5 por semana tanto antes o después de sus transacciones.
+
+En teoría un mercado podría formarse donde los usuarios pueden conseguir la inversión necesaria. En la práctica es mas eficiente para los usuarios simplemente comprar y vender el tiempo compartido necesario para alcanzar su tasa de utilización deseada. En otras palabras, el costo de negociar micropréstamos es mayor que el costo de mantener un balance apto para el máximo uso semanal.
+
+La limitación de tasa descentralizada puede habilitar nuevos tipos de aplicaciones descentralizadas que no eran viables cuando todos los usos de la aplicación requerían un micropago. Este nuevo modelo da a los desarrolladores de aplicaciones la habilidad de decidir si y cuando cobrar a sus usuarios por las transacciones.
+
+#### 4.6.3.c - Performance y escalabilidad
+
+La red Steem está construpida sobre *Graphene*, la misma tecnología que empodera BitShares.
+Graphene ha sido públicamente demostrado sustentando mas de 1000 transacciones por segundo en una red de pruebas distribuída. *Graphene* puede fácilmente escalar a 10.000 o mas transacciones por segundo con mejoras relativamente directas a la capacidad de servidores y protocolos de comunicación.
+
+##### Escala Reddit
+
+Steem puede manejar una base de usuarios mas grande que Reddit. En 2015 los 8,7 millones de usuarios generaron un promedio de 23 comentarios por segundo [13], con un promedio de 83 comentarios anuales por usuario. Hubieron 73 millones de posts de primer nivel, para un promedio de 2 nuevos posts por segundo. 7 mil millones de votos positivos creando un promedio de velocidad de 220 votos por segundo. Dicho todo ésto, si Reddit estuviese operando en un blockchain requerirpia un promedio de 250 transacciones por segundo.
+
+Para lograr esta rendimiento de líder de la industria, Steem ha juntado lecciones aprendidas del  *LMAX Exchange*, que puede procesar 6 millones de transacciones por segundo. Entre estas lecciones se encuentras los sigueintes puntos clave:
+
+1. Mantener todo en memoria.
+2. Mantener el núcleo de la logica de negocio en un sólo hilo.
+3. Mantener las operaciones criptográficas (hashes y firmas) fuera de la lógica del núcleo de negocio.
+4. Dividir la validación en comprobaciones dependientes e independientes del estado.
+5. Usar un modelo de datos orientado a objetos.
+
+Al seguir estas simples reglas, Steem puede procesar 10.000 transacciones por segundo sin un esfuerzos significativos en términos de optimización. Mantener todo en memoria es cada vez mas viable dada la reciente introducción de la tecnología *Optane™* de *Intel* [15]. Debería ser posible para el hardware manejar toda la lógica del negocio asociada con Steem en un sólo hilo con todos los posts mantenidos en memoria para una indexación rápida. Incluso Google mantiene su índice completo de internet en RAM. El uso de la tecnología blockchain hace trivial replicar la base de datos en varias máquinas para prevenir la pérdida de datos. A medida que la tecnología *Optane™* avance, el RAM se volverá aún mas veloz mientras se gana persistencia. En otras palabras, Steem está diseñado para la arquitectura del futuro y diseñado para escalar.
 
 
+> [13] Reddit Statistics, Number of Users and Comments per Second
+http://expandedramblings.com/index.php/reddit-stats/2/
 
+> [14] Martin Fowler, The LMAX Architecture
+http://martinfowler.com/articles/lmax.html
+
+> [15] Introducing Intel Optane Technology – Bringing 3D XPoint Memory to Storage and Memory Products
+https://newsroom.intel.com/press-kits/introducing-intel-optane-technology-bringing-3d-xpoint-memo
+ry-to-storage-and-memory-products/
+3
+
+#### 4.6.3.d - Asignación y suministro
+
+La red Steem comienza con una provición de moneda de 0 y coloca STEEM a través de la peurba de trabajo (*Proof of work*) a una velocidad de aproximadamente 40 STEEM por minuto a los mineros, con un adicional de 40 STEEM por minuto siendo creados para financiar el contenido y fondos para premios de curado (totalizando 80 STEEM por minuto). Entonces la red empieza a premiar a los usuarios que convierten a SP. En este punto, STEEM crece a una velocidad de aproximadamente 800 STEEM por minuto debido a los efectos combinados de los disintos Premios de Contribución sumarizados abajo:
+
+###### Premios por contribución
+
+- Premios de curado: 1 STEEM por bloque o 3,875% anual, el que sea mayor.
+- Premios de creación de contenido: 1 STEEM por bloque o 3,875% anual, el que sea mayor.
+- Premios de producción de bloques: 1 STEEM por bloque o 0,750% anual, el que sea mayor.
+- Premios por inclusión de POW previos al bloque 864.000: 1 STEEM por bloque (entregados como 21 STEEM por ronda)
+- - Premios por inclusión de POW posteriores al bloque 864.000: 0,0476 STEEM por bloque (entregados como 1 STEEM por ronda) o 0.750% anual, el que sea mayor.
+- Premios por liquidez: 1 STEEM por bloque (entregados como 1200 STEEM por hora) o 0,750% anual, el que esa mayor.
+
+##### Premios por poder
+
+Steem Power premia: Por cada STEEM creado por los premios de arriba, 9 STEEM se dividen entre todos los poseedores de Steem Power.
+
+##### Operaciones de SMS
+
+- Premios SMD: Un porcentaje del valor del SMD es creado en un set APR por los testigos y abonado en forma de SMD a los poseedores de SMD.
+- Tasa de alimentación siguiendo: El monto de STEEM por el cual el total de SMD en existencia puede ser redimidos cambiarán basados en cambios en el índice de precios. Este cambio es efectivamente destrucción de STEEM (quemado o *burning*) cuando el valor de STEEM (tal como lo midan los indicadores) esté incrementándose, o creación de STEEM cuando el valor de STEEM está declinando.
+
+Los límites de porcentaje efectivamente aseguran los incentivos por premios no se vuelvan insignificantemente pequeños con el tiempo, el cual está destinado a prevenir que el sistema experimente el "salto de velocidad" en el patrón de crecimiento de muchos otros blockchains, donde un chorro de crecimiento inicial impulsado por los altos incentivos de los participantes tempranos es seguidos por un estancamiento prolongado mientras el contínuo declive de incentivos cae por debajo del nivel necesario para inducir a los nuevos a participar.
+
+El efecto completo de estas constantes de porcentaje en la asignación y suministro es que la tasa de 800 STEEM (aproximadamente) pro minuto se mantiene en efecto por largo tiempo (ej.: unidades de STEEM), pero cae en términos de porcentaje (ej.: 800 STEEM es menor y una fracción menor del suministro total mientras que el suministro total crece y crece). Cuando los variados componentes indivuduales de la tasa de 800 STEEM por minuto alcanzan sus respectivos pisos basados en porcenaje, cada piso detiene la caída en su componente de la tasa. Esto en cambio significa que sobre el largo plazo, la tasa nominal aumentará desde 800 STEEM por minuto al (variable en tiempo, dependiente del suministro) valor necesario para mantener un crecimiento anualizaco constante del 10% para los Incentivos de Contribución, y un crecimiento anual constante del 100% para el efecto combinado de los Incentivos de Contribución e Incentivos de Poder. El efecto general es una duplicación del suministro de STEEM a cada año (pero, como se explica en la siguiente sección, si la mayor parte de los usuarios hacen *Power Up*, entonces gran parte de esta duplicación es efecticamente una "división" que no transfiere la propiedad).
+
+La imágen general del suministro es complicada por el efecto de las operaciones de SMD, las que pueden resultar en creación o destrucción a larga escala de STEEM a través del seguimiento de tasa de alimentación y premios SMD, como se explica en la sección SMD. Otros efectos de menor escala tambien existen, incluyendo incentivos sin reclamar (ej.: premios de bloque por bloques perdidos), ruido debido a la suerte del minador en la producción de prueba de trabajo, y los efectos de los cambios en la longitud de la cola de minadores debido a un cambio en el total de poder de *hash* de la red.
 
