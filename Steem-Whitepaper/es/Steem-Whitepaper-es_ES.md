@@ -57,7 +57,7 @@ Steem es una base de datos blockchain que permite la contrucción comunitaria e 
             	- b.a Ejemplo de implementación
                 - b.b Caso de estudio: Bitcoin
                 	- b.b.a Impacto de capacidad
-                    - b.b.b Numero máximo de usuarios únicos
+                    - b.b.b Número máximo de usuarios únicos
                     - b.b.c Comparación a comisiones
                 - b.c Creación de cuenta
                 - b.d Justificando balances mínimos
@@ -341,7 +341,7 @@ El único "problema" con la mentalidad de cangrejo es cuando la gente cree equiv
 
 ###### La Historia de la cubeta de cangrejos [6]
 
-*Un hombre se encontraba caminando por la playa y vió a otro hombre pescando en el muelle con una cubeta a su lado. A medida que se acercaba, vió que la misma estaba destapada y tenía cangrejos vivos en su interior.
+>*Un hombre se encontraba caminando por la playa y vió a otro hombre pescando en el muelle con una cubeta a su lado. A medida que se acercaba, vió que la misma estaba destapada y tenía cangrejos vivos en su interior.
 "¿Por qué no tapa su cubeta para que no escapen los cangrejos?", preguntó.
 "No entiendes.", respondió el pescador, "Si hay sólo un cangrejo en la cubeta, éste trepará y escapará rápidamente, sin embargo, cuando hay muchos cangrejos en ésta, si uno trata de trepar por un lado, los demás lo tomarán y lo devolverán adentro para que sufra el mismo destino que el resto."*
 
@@ -484,6 +484,112 @@ La tecnología blockchain actualmente depende de comisiones de transacción para
 Los blockchains son redes descentralizadas donde todas las transacciones son emitidas a todos los pares (*peers*). Cada tanto se produce un bloque que incluye alguna o todas las transacciones pendientes. Todos los blockchains deben encontrar una solución para prevenir que usuarios maliciosos consuman todo o gran parte de la capacidad disponible de la red con transacciones sin valor o inútiles. Estas transacciones sin valor evitan que transacciones valiosas y útiles sean procesadas en detrimento de la red.
 
 La solución adoptada por la mayoría de los blockchains hasta ahora es cargar una comisión mínima de transacción. Una comisión con un costo de unos pocos centavos es suficiente para lograr que atacar la red no sea redituable e incluso costoso. Mientras ésta solución resuelve el problema del *spam*, introduce nuevos problemas. Imagine resolver el problema del *spam* en emails introduciendo una pequeña comisión en cada correo enviado; la gente no usaría el correo electrónico.
+
+##### Los micropagos no funcionan
+
+El problema fundamental de cargar comisiones de transacción reside en que los micropagos no funcionan, especialmente por el bajo valor de las acciones de los usuarios. Cuando se carga una comisión en cada transacción, se limitan los tipos de transacciones que una red descentralizada puede procesar. Independientemente de cuán racional sea el argumento para la necesidad de las comisiones, los usuarios aún detestan la experiencia de dejar unos centavos por cada cosa que hacen.
+
+Imagine que los sitios web que usamos a diario cobraran una comisión por cada vez que modificamos nuestras cuentas o cambiamos la contraseña. Los usuarios esperan que ciertas cosas sean gratuitas. Requerir a los usuarios que tomen una decisión sobre que acción merece o no una pequeña comisión crea ansiedad que causa que éstos se retiren.
+
+> Una transacción no puede valer tanto como para requerir una decisión pero vale tan poco que la decisión es automática. Hay cierto monto de ansiedad involucrado en cualquier desición de compra, no importa cuán poco ni el tamaño, y no deriva de la interfaz utilizada o el tiempo requerido, sino del propio acto de decidir.
+Los micropagos, como todos los pagos, requieren una comparación: "Vale ésta cantidad de X tanto de Y?". Hay una costo mental de transacción mínimo creado por este hecho que no se puede optimizar, porque la única transacción que un usuario estaría dispuesto a aprobar sin pensarlo es aquella que no tiene costo, que no es una transacción.
+– Clay Shirky [8]
+
+En el mundo de los pagos financieros, pequeñas comisiones son aceptables debido a que el valor de la transacción es extremadamente alto en relación a la comisión cobrada, y el comprador ya ha tomado la decisión de comprar. El mundo de aplicaciones potenciales de blockchai es mucho mas grande que simplemente el de pagos financieros e incluye muchas transacciones necesarias para las cuales las comisiones son simplemente inaceptables para los usuarios.
+
+Sistemas como BitShares, Nxt, Ripple, Counterparty y Stellar permiten a los usuarios colocar órdenes de límite en el blockchain y todos cobran a los usuarios una pequeña comisión para realizar esta acción. Luego si el usuario desea cancelar su orden, se le cobra otra comisión. Sistemas como Ethereum llevan los micropagos a un nivel completamente nuevo: cobrar por cálculo. Todos estos sistemas luchan para atraer nuevos usuarios *mainstream* por la misma razón por la que un motor de búsqueda se esforzaría para atraer nuevos usuarios desde google si cobrara una pequeña comisión por cada búsqueda. No importa cuan bueno sea el servicio, la gente espera que ciertas cosas sean gratuitas. Esto es cierto incluso si un usuario finalmente termina pagando más en una estructura diferente.
+
+> [8] Clay Shirky, The Case Against Micropayments
+http://www.openp2p.com/pub/a/p2p/2000/12/19/micropayments.html
+
+##### Las comisiones son barreas para el acceso
+
+Cualquier comisión crea una barrera de entrada a los nuevos usuarios. Antes que alguien pueda experimentar con Ethereum debe adquirir *tokens* de *ETH*. Cualquiera que desee desarrollar una aplicación descentralizada en Ethereum debe trasladar el costo a sus clientes. Comprar una criptomoneda no es una tarea fácil y raramente tiene sentido por montos menores a $10. Esto quiere decir que los usuarios nuevos queriendo probar una nueva aplicación descentralizada debe primero ser convencido de empezar con $10.
+
+##### Cambiando las comisiones
+
+Con el tiempo una red debe ajustar las comisiones. Esto puede suceder tanto por un incremento en el valor del *token* o al aumento en la capacidad. Los usuarios prefieren comisiones predecibles y servicio garantizado. Aún siendo posible ajustar dinámicamente las comisiones en tiempos de mucho uso, el resultado es una pobre experiencia de usuario.
+	
+##### Ataques de identidad o Ataques Sybil (Sybil attacks)
+
+Los sitios web centralizados previenen el spam limitando la frecuencia o alguna forma de verificación de identidad. Incluso algo tan simple como un *CAPTCHA*[8] es suficiente para limitar la creación de cuentas falsas.  Si alguien abusa de su cuenta, los sitios web centralizados tienen la libertad de bloquear la cuenta. 
+
+En un sistema descentralziado no hay forma directa de prohibir usuarios ni un proveedor centralizado que pueda alojar un *CAPTCHA* para imponer un límite de frecuencia de creación de cuentas. De hecho, la falta de habilidad para censurar usuarios es un de los principales puntos atractivos de la tecnología del blockchain.
+
+##### Reserva completa vs. reserva fraccionada
+
+Veamos el blockchain como un Proveedor de Servicio de Internet (*ISP*) cooperativo que posee todos los cables en pueblo y tiene un ancho de banda máximo que puede proveer en cualquier momento. La gente viviendo en el pueblo puede comprar acciones en el *ISP* y a cambio obtienen el derecho de utilizar una porción del ancho de banda disponible.
+
+El *ISP* tiene dos opciones, correr un sistema de "reserva completa" o uno de "reserva fraccional". Bajo un sistema de reserva completa a cada usuario solo se le permite una fracción del ancho de banda máximo proporcional a sus acciones. Debido a que no todos usan Internet al mismo tiempo, la red del pueblo sería sifnificativamente subutilizada.
+
+En un sistema de reserva fraccional los usuarios individuales podrían utilizar mas ancho de banda del que tienen otorgado en cualquier momento mientras no todos usen Internet en ese mismo tiempo. El problema al operar una reserva fraccionada es que las congestiones ocurren cuando mucha gente desea usar la red al mismo tiempo. El *ISP* necesita una forma de priorizar el ancho de banda durante períodos congestionados. En el caso mas extremo, una red completamente congestionada debe revertirse a un sistema de reserva completa. El desafío es implementar la proporción correcta de reserva fraccional.
+
+> [9] reCAPTCHA, Easy on Humans, Hard on Bots
+https://www.google.com/recaptcha/intro/index.html
+
+#### 4.6.3.b - Iterando mas allá de los micropagos
+
+La solución a los problemas de los micropagos es implementar reservas fraccionales dinámicas. Bajo este modelo el blockchain automáticamente ajustará la proporción de reserva para la red durante períodos de congestión. El blockchain ubicará un objetivo de utilización que deje suficiente margen para oleadas de demanda en cortos plazos. En cualquier momento que se mantengan oleadas de uso el blockchain reduce el ancho de banda máximo por acción. Cuando una oleada se acaba y sobra capacidad, el blockchain puede lentamente incrementar el ancho de banda por acción.
+
+El ancho de banda utilizado por un usuario individual debería ser medido sobre un período de tiempo apropiadamente largo para permitir que el usuario puede invertir el horario de su uso. Los usuarios tienen a acceder, hacer varias cosas al mismo tiempo, y luego salir. Esto significa que su ancho de banda durante un período de tiempo corto puede parecer mucho mas alto que si es visto sobre un período mas largo. Si la ventana de tiempo se estira demasiado entonces la proporcion de reserva no se ajustará lo suficientemente rápido para responder al incremento a corto plazo, si la ventana es demasiado estrecha entonces agrupar el uso tendrá un impacto muy grande en usuarios normales.
+
+En nuestra estimación debería ser suficiente medir el promedio semanal de ancho de banda de los usuarios. Cada vez que un usuario firma una transacción, ésta es ténida en cuenta en el promedio móvil individual del usuario. En el momento en que el promedio móvil de un usuario excede el límite actual de la red, su transacción es retrasada hasta que su promedio se acomode debajo de ese punto.
+
+##### Ejemplo de implementación
+
+Siendo *B* equivalente al promedio de ancho de banda de un usuario sobre el tiempo *T*. Siendo *W* equivalente al número de segundos por semana, y siendo *N* equivalente al tamaño de la nueva transacción ocurrida *S* segundos después de *T*, el blockchain puede calcular el nuevo promedio de ancho de banda para un usuario cómo:
+
+```
+Bnew = MIN(0,B * (W­S) / W) + N * S / W
+Tnew = T + S
+Each user is entitled to an average weekly bandwidth of:
+Let U = the user’s SP
+Let S = the total number of SP
+Let R = the current reserve ratio between 1 and Rmax
+Let C = the maximum block size capacity set by witnesses
+Let L = the total blocks per week
+Let M = C * L * R
+Allocation = M * U / S
+```
+
+Se le otorgaría a un usuario un promedio de ancho de banda de M * U / S. Cuando una transacción cause que el promedio individual se posicione sobre éste límite, el usuario no podrá transaccionar hasta que pase el tiempo suficiente para bajar el promedio.
+
+La red puede incrementar la proporción de reserva cuando los bloques sean menos que la mitad de la capacidad obetivo y decrecer cuando sean mas de la mitad. El algoritmo utilizado para ajustar *R* está diseñado para reaccionar rápidamente para disminuír la proporción de reserva cuando hay un pico de demanda, mientras actúa lentamente para incrementar la proporción de reserva en un período de baja demanda.
+
+La proporción mínima de reserva es 1, y la máxima debería ser calculada para prevenir que pequeños participantes consuman todo el ancho de banda disponible. Si nadie se encuentra utilzando el ancho de banda disponible entonces la proporción de reserva puede crecer hasta que un usuario con sólo 1 satoshi de la moneda pueda transaccionar cada bloque.
+
+##### Caso de estudio: Bitcoin
+
+Para entender como funcionaría este algoritmo en Bitcoin es necesario estimar un valor razonable para la proporción de reserva, R, basados en el uso actual. Basado en el suministro total de 15 millones BTC y un volumen diario de transacciones de 400.000 BTC [10], podemos deducir una mínima proporción de 38 por Bitcoin. Utilizando las ecuaciones  podemos calcular que el ancho de banda seanal (en bytes) permitidos por BTC es:
+
+```
+Let C = 1MB = 1024*1024
+Let L = 1008 (blocks per week)
+Let R = 38
+Let S = 14000000 BTC (supply minus Satoshi’s unmoving coins)
+Let U = 1 BTC
+CLR/S = 2869 bytes per week, or about 5 transactions/week per BTC
+```
+
+Debido que *R = 38* es una cota inferior a la tasa de reserva, *CLR/S* es una cota en el ancho de banda permitido. Este simple caso de estudio sugiere que un usuario requerirá como mucho 0.20 BTC para transaccionar una vez a la semana. Sin embargo, este es una cota superior vaga obtenida asumiendo que todos los BTC son igualmente móviles. Este no es el caso -- usuarios con docenas o cientos de bitcoins no necesariamente transaccionan docenas o centenas de veces por semana. Las transacciones "restantes" que esos usuarios "deberían" haber realizado incrementarán la tasa de reserva, permitiendo que su ancho de banda sin utilizad sea "reciclado" para usuarios mas pequeños.
+
+
+Todos los estimados de arriba son cotas superiores conservativas asumiendo que las monedas y uso son distribuídas de una forma relativamente plana. La realidad es que los grandes consumidores, como los *exchanges*, tienen una relación de moneda/uso mucho mayor que los usuarios normales, que a su vez implica que los requerimientos del balance mínimo son mucho menores.
+
+> [10] Bitcoin Estimated Transaction Volume
+https://blockchain.info/charts/estimated-transaction-volume?showD
+
+##### Impacto de capacidad
+
+La capacidad del blockchain no está necesariamente limitada. Está bien dentro de la capacidad tecnológia de la infraestructura internet incrementar el tamaño de bloque de Bitcoin a 10MB lo que en cambio reducirá el balance mínimo requerido por un factor de 10. Mientras Bitcoin actualmente soporta aproximadamente 3 transacciones por segundo, implementaciones alternativas pueden permitir mas de 1000 transacciones por segundo. Esto modifica nuestra cota superior a 0.0006 BTC, queriendo decir que una cuenta que contenga 0.0006 BTC tendrá la posibilidad de transaccionar al menos una vez por semana en promedio (y posiblemente muchas mas veces porque estamos lidiando con una cota superior mas permisiva).
+
+##### Número máximo de usuarios únicos
+
+Podemos utilizar una matemática similar para calcular el número máximo de usuarios únicos que la red puede permitir transaccionar una vez por semana como: B * W / T. *T* representa el promedio de tamaño de transacción. Esto quiere decir que Bitcoin podría soportar alrrededor de 2 millones de usuarios transaccionado una vez por semana asumiendo que cada usuario tuviese el mismo balance.
+
+##### Comparación de comisiones
+
+Si asumimos que un usuario con $25 dólares en BTC transacción una vez por semana y paga una comisión de $0.04 cada vez entonces ellos pagarían mas de $2 en comisiones por año. Un usuario tendría que ganar una tasa de retorno de 8% sobre sus $25 sólo para no salir perdiendo al pagar comisiones. Todo indica que los usuarios van a mantener su dinero en el blockchain de todas formas, entonces este usuario con $25 en BTC ha ahorrado $2 en el transcurso de un año al adoptar una propuesta de tasa limitada en lugar de una libre de comisiones. Con solo $175 podrían transaccionar todos los días y ahorrar $14 al año.
 
 
 
