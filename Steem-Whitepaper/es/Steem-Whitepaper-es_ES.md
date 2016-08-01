@@ -725,3 +725,66 @@ El efecto completo de estas constantes de porcentaje en la asignación y suminis
 
 La imágen general del suministro es complicada por el efecto de las operaciones de SMD, las que pueden resultar en creación o destrucción a larga escala de STEEM a través del seguimiento de tasa de alimentación y premios SMD, como se explica en la sección SMD. Otros efectos de menor escala tambien existen, incluyendo incentivos sin reclamar (ej.: premios de bloque por bloques perdidos), ruido debido a la suerte del minador en la producción de prueba de trabajo, y los efectos de los cambios en la longitud de la cola de minadores debido a un cambio en el total de poder de *hash* de la red.
 
+###### Impato de Tasa de creación de tokens
+
+A primera vista, un crecimiento anual del 100% en el suministro de STEEM puede parecer hiper inflacionario y no sustentable. Aquéllos que siguen la Teoria de Cantidad de Dinero [16] pueden incluso llegar a la conclusión de que el valor de STEEM debe caer aproximadamente un 5,6% por mes. Nosotros sabemos por incontables ejemplos del mundo real que la cantidad de dinero no tiene un impacto directo inmediato en su valor, a pesar de que sin duda juega un rol.
+
+Debido a que el 90% de todo el STEEM creado es redistribuído de vuelta a los poseedores de SP, el resultado es similar a tener una división de 2:1 cada año en lugar de una verdadera inflación. La tasa total de expendido utilizada para premiar a quienes contribuyen es de alrrededor del 10% de la capitalización del mercado por año, una tasa bien por debajo de la que sostuvo Bitcoin durante los primeros 7 años luego de su lanzamiento.
+
+Crear nuevo STEEM para pagar un incentivo a un usuario o grupo particular tiene un efecto negativo sobre todos los demás balances de usuarios en términos de su porcentaje del sumnistro de STEEM. Si exactamente el 90% del suministro de STEEM es mantenido en SP, el efecto negativo en los balances de los poseedores de SP es balanceado exactamente por el efecto positivo de los incentivos de poder (*Power Incentives*); Los poseedores de SP obtienen mas STEEM (en términos nominales) pero su porcentaje de la cadena (en términos de fracción del suministro total) se mantiene sin cambios. Si menos (mas) del 90% del suministro de STEEM es mantenido como SP, ambos efectos aún apuntan en direcciones opuestas, pero el efecto positivo (negativo) se vuelve mayor y la suma de ambos efectos tenderá a tirar el balance de SP hacia el 90%. Este "tironeo" no implica que el valor del SP debe sostenerse en 90% sobre el largo plazo, porque los receptores del incentivo pondrán (y en algunos casos deberán) sus STEEM en SP, lo que significa que el "tironeo" hacia el 90% no es la única fuerza que aplica sobre el porcentaje del suministro de STEEM mantenido como SP.
+
+Desde agosto de 2008 hacia enero de 2009 el suministro de dinero Estadounidense creció desde $871.000 Millones [17] a $1.737.000 Millones, a un ritmo de mas del 100% anual y luego continuó creciendo aproximadamente a un 20% anual por los siguientes 6 años. Dicho ésto, el suministro de dinero en EEUU ha crecido 4,59x durante menos de 7 años. En el mismo tiempo, el valor del dólar relativo a los bienes y servicios ha caído menos del 10% de acuerdo a los índices de precios del gobierno [18]. Este ejemplo del mundo real demuestra que el suministro es sólo un componente del precio.
+
+El precio de un *commodity* digital, como STEEM, es conducido tanto por el suministro y la demanda. Si nuevo STEEM es distribuído a aquellos que sostienen a largo plazo entonces el crecimiento en el suministro es desfazado por la correspondiente demanda de sostener. El impacto de este cambio en el suministro es pospuesto hasta una fecha a futuro cuando el poseedor a largo plazo decida vender. La presión para vender es entonces distribuída sobre 2 años.
+
+Cuando un poseedor a largo plazo decida salir, el suministro de STEEM en el mercado se incrementará y empujará el precio hacia abajo. Esta presión es contrarresetada cuando un nuevo poseedor a largo plazo decide comprar STEEM y convertilo de nuevo a SP. Podemos por lo tanto concluír que el precio será mayormente impactado por un cambio en la demanda de sostener STEEM a largo plazo.
+
+Del incremento anual de 100% en el suministro virtual de STEEM, el 5% del mismo es en forma de Steem Dollars (SMD). SMD representa un compromiso de crear un dolar de STEEM en el futuro y no impacta en el monto de STEEM en el mercado actual. El cambio en la tasa deuda/propiedad puede impactar en el valor percivido del STEEM, pero no se asocia directamente a una caída en el valor de STEEM. Si el valor de Steem aumenta en el tiempo, entonces el monto de STEEM que puede ser creado en el futuro será menor y la "inflación" correspondiente finalmente nunca sucedió. 
+
+Dicho ésto, el "gasto" total de Steem es para financiar los montos de premios de contenido, curado, minado, y liquidez a 10% APR o 1,2% por mes. La misma transferencia de riquezas podría ser implementada sin ningún cambio en el suministro de STEEM a través de la implementación de una tasa de interés negativo en el STEEM líquido de alrrededor del 10% mensual. Dicho de otra forma, podría ser implementado cargando una comisión del 3% (similar a las tarjetas de crédito) en cada transacción y teniendo un 1% de todo el STEEM transferido a diario. La red de Bitcoin transfiere [19 400.000 BTC de 15,5 Millones (o 2,5% diario).
+
+El propósito del STEEM líquido es facilitar cambios en la propiedad entre los poseedores a largo plazo. Este es un cambio en la propiedad que la red "grava" para financiar el crecimiento. Esta gravámen a la transferencia puede ser evitado casi por completo por una venta automática de STEEM por SMD semanal cuando la red convierte SP nuevamente a STEEM. El tiempo total gastado en sostener STEEM será tan pequeño que cualquier impacto de cambiar el suministro de STEEM será insignificante comparado a la volatilidad y otras comisiones del mercado.
+
+> [16] Quantity Theory of Money,
+http://www.investopedia.com/articles/05/010705.asp
+> [17] United States Money Supply, 2009
+https://research.stlouisfed.org/fred2/graph/?s%5B1%5D%5Bid%5D=AMBNS
+> [18] CPI Inflation Index, United States Dollar 2008-2016
+http://data.bls.gov/cgi-bin/cpicalc.pl?cost1=1&year1=2008&year2=2016
+> [19] Bitcoin Transaction Volume
+https://blockchain.info/charts/estimated-transaction-volume
+
+###### Impacto de tasa de creación de *tokens* mayor al noventa porciento
+
+Al 1ro de mayo de 2016, mas del 98,49% de todo el STEEM ha sido convertido a SP. Esto demuestra que la demanda a poseer a largo plazo es dominante. En este entorno tanto el STEEM líquido como el SP son diluídos para financiar premios. 
+
+Durante los primeros 2 años de vida de la red de Bitcoin, se sostuvo una tasa de inflación anual [20] sobre el 100%. Durante los primeros 5 años estaba sobre el 30%, y por los primeros 8 años se encontraba sobre el 10%. De acuerdo a la herramienta para estimar inflación a futuro incluída en el código de fuente de Steem, Steem por contraste logrará una tasa instantánea anual de aproximadamente el 12% luego de solo 1 año (sin incluír los efectos de las operaciones de SMD)
+
+> [20] Bitcoin Annual Inflation Rate, Bitcoin Talk Forum
+https://bitcointalk.org/index.php?topic=130619.0
+
+###### Sistema contable
+
+El incremento en el suministro de STEEM es mayormente un artefacto contable creado por el deseo de evitar la carga de tasas de interpés negativo sobre el STEEM líquido. Las tasas de interés negativo complicarían la vida a los *exchanges* quienes tendrían que ajustar los balances de usuarios para tener en cuenta la tasa negativa de retorno de STEEM depositado. Espejando exactamente la lógica del blockchain sería propenso a errores y complicaría la integración y adopción. Por lo tanto, STEEM ha elegido nunca cobrar la cuenta a nadie, pero en su lugar incrementar el suministro. Esto logra un resultado económico similar sin forzar a todos a aceptar depósitos de STEEM para implementar tass de interés negativo en su registro interno.
+
+Un efecto colateral de incrementar el suministro es que la red requerirá niveles constantes de incremento en la precisión de su contabilidad. En promedio el número de bits requeridos para representar una cuenta típica crecerá en un 1.3 anual. Solo tomará 10 años hasta que los números involucrados ya no encajen dentro de la precisión de 53 bits soportada por JavaScript o la precisión de 64 bits soportada por los CPU. Sobre el tiempo la magnitud de los números involucrados crece mas allá de la escala y comprensión humana; incluso, los bits menos significativos tienen tan poco valor económico que los vuelve insignificantes.
+
+Con el fin de compensar el constante incremento de precisión, la red STEEM ejecuta una "división reversa" de 10:1 cada 32.000.000 bloques (aproximadamente 3 años). En este punto en el tiempo todos los balances de STEEM son divididos por 10 y todos los precios se multiplican por 10. Los *exchanges* de criptomoneda tendrán que suspender el intercambio en ese momento y actualizar los balances de cuenta y historial de precios para reflejar la "división reversa" antes de reactivar el intercambio.
+
+Todos los errores de redondeo serán en favor de la red. Cada balance puede perder hasta 0.009 STEEM debido al redondeo, pero este monto de STEEM debería ser económicamente insignificante. Colectivamente todos los poseedores de SP perderán como mucho 0.009 STEEM.
+
+#### 4.6.3.e - El poder de Steem
+
+Steem reconoce que el valor de todas las contribuciones de los usuarios (posts y votos) es mayor que la suma de sus partes. Un simple comentario vale casi nada, pero millones de posts curados vale muchos millones (o incluso miles de millones) de dólares. Un solo voto provee poco valor de curado, pero mil millones de votos es un curado efectovo. El contenido sin curado es de valor limitado. Dado todo el contenido de internet menos los enlaces entre éstos, Google lucharía para producir resultados de búsqueda útiles. Son los enlaces entre informaciones que le dan valor significativo.
+
+Por el hecho de que todos se benefician, todos deberían pagar. En otras palabras, ningún usuario individual debería esperar pagar por nada, pero en cambio debería recibir un pago por todo lo que hacen que de valor a Steem. Todo lo que necesitamos hacer es cerciorarnos qué contribuciones de usuario traen un valor de red social y cuales no.
+
+Colectivamente los usuarios de Reddit votan 220 veces por segundo y crean 23 posts por segundo. Reddit está valuado entre $500 millones [21] y $4.000 millones [22], lo que significa que cada uno de los votos y posts valen alrrededor de $0,06 y $0,50 asumiento que el valor de Reddit está mayoritariamente dentro del valor de la actividad del año pasado. Uno podría argumentar que la mayor parte del valor de Reddit son las discusiones cercanas al tiempo real que han ocurrido la semana pasada que incrementarían dramáticamente el valor de la nueva actividad. La gente va donde están todos hoy, no donde estuvieron el año pasado.
+
+> [21] Reddit Valuaton, Newsweek, 2014
+http://www.newsweek.com/investors-think-reddit-worth-500-million-26
+> [22] Worth of Web, March 2016
+http://www.worthofweb.com/website-value/reddit.com/
+
+
+
