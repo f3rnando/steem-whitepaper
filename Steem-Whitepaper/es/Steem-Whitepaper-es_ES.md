@@ -272,8 +272,8 @@ Lectores astutos reconocerán que los activos de provisión limitada que generan
 3. Una política monetaria independiente
 
 
-	[4] The Impossible Trinity, teoría económica
-	https://en.wikipedia.org/wiki/Impossible_trinity
+> [4] The Impossible Trinity, teoría económica
+https://en.wikipedia.org/wiki/Impossible_trinity
 
 
 Si los productores de indicadores apuntan a tener una política monetaria independiente para permitirles crear y destruír Steem Dollars y simultáneamente tener control total sobre la tasa de interés, entonces encontrarán problemas. La trinidad imposible dice que los Steem Dollars necesitan restringir el movimiento de capital, tener una tasa de intercambio inestable o tener control limitado sobre la tasa de interés.
@@ -325,7 +325,7 @@ Para realinear lso incentivos y desalentar a los individuos de simplemente autov
 
 Asumiendo que todos los usuarios poseen la misma cantidad de fondos, alguien que sólo se autovota recibirá menos que alguien que recibe votos de 100 usuarios distintos. Esto alienta a los usuarios a coooperar para votar las mismas cosas para maximizar el pago. El sistema también crea incentivos financieros para los usuarios *confabularse* en donde votar y luego dividirse el premio equitativamente entre ellos.
 
-	[5] Metcalfe’s Law https://en.wikipedia.org/wiki/Metcalfe%27s_law
+> [5] Metcalfe’s Law https://en.wikipedia.org/wiki/Metcalfe%27s_law
     
 #### 4.5.2.a - Complicidad en la votación
 
@@ -351,13 +351,13 @@ Eliminar el "abuso" no es posible y tampoco debería ser el objetivo. Incluso aq
 
 La meta de desarrollar una moneda comunitaria es obtener mas "cangrejos en la cubeta". Tomar medidas extremas para eliminar todo abuso es como intentar poner una tapa en la cubeta para prevenir que se escapen algunos cangrejos y viene a expensas de hacerlo mas difícil de agregar nuevos integrantes. Alcanza con hacer las paredes resbaladizas y dar a otros "cangrejos" el suficiente poder para prevenir que otros "escapen".
 
-	[6] The Story of the Crab Bucket, http://guidezone.e-guiding.com/jmstory_crabs.htm
+> [6] The Story of the Crab Bucket, http://guidezone.e-guiding.com/jmstory_crabs.htm
 
 ### 4.5.3 - Tasa limitada de voto
 
 Una mayor parte de minimizar el abuso es limitar la tasa de voto. Los usuarios individuales sólo pueden leer y evaluar tántos items de trabajo diarios. Cualquier intento de votar mas frecuentemente que ésto es una señal de automatización y potencial abuso. A través del límite de tasa de voto, los participantes que voten más frecuentemente tienen su voto menos valioso que los participantes que votan con menos frecuencia. Los intentos de dividir *tokens* entre múltiples cuentas también divide la influencia y por ende no resulta en un incremento neto en influencia ni saltea el límite de tasa impuesto en el voto.
 
-![](fig/fig1.png)
+![](https://github.com/f3rnando/steem-whitepaper/raw/master/Steem-Whitepaper/es/fig/fig1.png)
 
 El gráfico de arriba muestra cómo el poder de voto de un usuario decrece cada vez que vota y luego se regenera a medida que pasa el tiempo sin votar. Estos gráficos usan una unidad nominal de tiempo y podría ser hecho a escala de cualquier tasa de voto. Nótese que el poder de voto cae rapidamente durante períodos de votación contínua, y luego se recupera lentamente.
 El poder de voto es multiplicado por los *tokens* invertidos de un usuario para determinar la parte que debería ser colocada en el *pool* de pagos para determinado ítem.
@@ -366,7 +366,7 @@ El poder de voto es multiplicado por los *tokens* invertidos de un usuario para 
 
 Para prevenir abusos a futuro, todos los pagos son retrasados por un promedio ponderado de 24 horas a partir del momento en que cada voto fue emitido. Esto asegura que grandes poseedores no puede atinar pagos votando al menos un segundo antes que otros votantes (también conocidos como "cangrejos") tengan la oportunidad de rechazar potenciales abusos. Una vez que se realiza el pago al usuario, el conteo de votos es restaurado a 0. Si vienen votos luego del pago, el proceso vuelve a comenzar. 
 
-![](fig/fig2.png)
+![](https://github.com/f3rnando/steem-whitepaper/raw/master/Steem-Whitepaper/es/fig/fig2.png)
 
 Este gráfico muestra cómo el período de expiración de voto cambia en respuesta a nuevos votos positivos y negativos siendo aplicados. Nuevos votos extienden el período de pago en proporción a cuán grande son relativos a todos los votos que se han sucedido anteriormente. Se puede ver cerca de la línea de tiempo con valor *40* un gran numero de nuevos votos que extienden el período de votación por 12 horas, los votos menores subsecuentes tienen mucho menos impacto en el período de votación.
 
@@ -375,7 +375,7 @@ Este gráfico muestra cómo el período de expiración de voto cambia en respues
 
 Una de las metas primordiales del sistema de premios de Steem es producir las mejores discusiones on internet. Cada año el 10% de la capitalización de mercado de Steem es distribuída a los usuarios que envían, votan y discuten contenido. Como el tamaño de *Bitcoin* ésto podría ser tanto como $1.75 millones de dólares por día siendo entregados a los contribuyentes.
 
-![](fig/fig3.png)
+![](https://github.com/f3rnando/steem-whitepaper/raw/master/Steem-Whitepaper/es/fig/fig3.png)
 
 La distribución efectiva dependerá del patrón de votación de los usuarios, pero sospechamos que la amplia mayoría de los premios será distribuída entre el contenido mas popular. Steem prepara los pagos proporcional a *n^2* veces el monto de Steem Power votando en un post. En otras palabras, el post *p* recibirá un pago proporcional a:
 
@@ -390,7 +390,7 @@ El impacto de esta distribución de votos y pagos ofrece grandes recompenzas al 
 El efecto económico de ésto es similar a la lotería donde la gente sobreestima su probabilidad de obtener votos y por ende trabaja mas del valor esperado de su premio y por lo tanto maximizan el monto total de trabajo realizado en servicio de la comunidad.
 El hecho de que todos "ganen algo" juega sobre la misma psicología que suelen usar los casinos para mantener a la gente apostando. Dicho de otra forma, los pequeños premios ayudan a reforzar la idea de que es posible ganar premios mayores.
 
-	 [7] Zipf’s Law https://en.wikipedia.org/wiki/Zipf%27s_law
+> [7] Zipf’s Law https://en.wikipedia.org/wiki/Zipf%27s_law
 
 #### 4.5.5.a - Recompensas para posts padres
 
