@@ -725,7 +725,7 @@ El efecto completo de estas constantes de porcentaje en la asignación y suminis
 
 La imágen general del suministro es complicada por el efecto de las operaciones de SMD, las que pueden resultar en creación o destrucción a larga escala de STEEM a través del seguimiento de tasa de alimentación y premios SMD, como se explica en la sección SMD. Otros efectos de menor escala tambien existen, incluyendo incentivos sin reclamar (ej.: premios de bloque por bloques perdidos), ruido debido a la suerte del minador en la producción de prueba de trabajo, y los efectos de los cambios en la longitud de la cola de minadores debido a un cambio en el total de poder de *hash* de la red.
 
-###### Impato de Tasa de creación de tokens
+###### Impacto de Tasa de creación de tokens
 
 A primera vista, un crecimiento anual del 100% en el suministro de STEEM puede parecer hiper inflacionario y no sustentable. Aquéllos que siguen la Teoria de Cantidad de Dinero [16] pueden incluso llegar a la conclusión de que el valor de STEEM debe caer aproximadamente un 5,6% por mes. Nosotros sabemos por incontables ejemplos del mundo real que la cantidad de dinero no tiene un impacto directo inmediato en su valor, a pesar de que sin duda juega un rol.
 
@@ -783,8 +783,89 @@ Colectivamente los usuarios de Reddit votan 220 veces por segundo y crean 23 pos
 
 > [21] Reddit Valuaton, Newsweek, 2014
 http://www.newsweek.com/investors-think-reddit-worth-500-million-26
+
 > [22] Worth of Web, March 2016
 http://www.worthofweb.com/website-value/reddit.com/
+
+##### Sin micropagos, propina opcional
+
+Los intentos existentes de integrar una criptomoneda en una plataforma de *social media* se han enfocado en habilitar a los usuarios a pagarse entre sí. Muchos servicios han intentado introducir propinas. La teoría es que si hacemos el acto de dar propina lo suficientemente simple entonces mas gente lo haría. Otros servicios intentan hacer que mas gente pague para promover o empujar el ranking de su contenido. Otros aún intentan construir pequeños mercados de predicción de cuanta propina un artículo recibirá.
+
+Todas estas propuestas recaen en micropagos. Estas difieren solo en quién está haciendo el pago. Todas sufren de falta de compromiso de parte de la gente haciendo los micropagos. En la búsqueda de producción de contenido incentivado los emprendedores han estado tan enfocados en quien deberia pagar que han perdido la noción de la obvia realidad: todos se benefician de las acciones de todos asi que todos deberían pagar o nadie debería pagar, dependiendo en como se mire.
+
+Steem se salta los micropagos por completo porque cuando un usuario vota un post es la comunidad quien paga la cuenta. El mismo monto de dinero será gastado tanto si el usuario vota un post o no y los fondos no vendrán del votante.
+
+La energía mental asociada a tomar una desición económica se vuelve una barrera para la participacion para la mayoría de las personas.
+
+> Ya enfrentamos una multitudo de opiciones a diario con respecto a qué acceder en línea en esta era digital de la explosión de información, y cada decisión adicional que debemos hacer simplemente se agrega a la incertidumbre y ansiedad que enfrentamos. Quienes apoyan los micropagos creen que una implementación simplificada puede minimizar la intrusividiad de los micropagos y mejorar la experiencia de usuarios, pero su argumento solo crea doble estándares para el proceso de toma de decisión [2]. Una transacción no puede simultáneamente ser suficientemente valiosa para garantizar una desición y valer tan poco que la desición es automática. **Las únicas transacciones que los usuarios pueden aprobar sin pensarlo son aquellas que no cuestan nada**, en consecuencia cualquier microtransacción de valor positivo incurrirá en costos mentales a través de su requerimiento de tomar una desición. Además, el costo de transacción mental de hecho crece bajo cierto umbral de valor, un fenómeno que ubica los micropagos en aún mayor desventaja. Por ejemplo, es muy fácil pensar que una copia de los periódicos actuales cuestan $1, pero los lectores enfrentan mucha mas dificultad y ansiedad en decidir el valor de cada artículo o palabra. Tal dilema solo será replicado y exsacervado si todo el contenido en línea fuese desglosado en sus componentes e individualmente cotizado dentro de un sistema de micropagos.
+> - Micropagos: Un modelo de negocios viable [23]
+
+Bajo Steem, los micropagos son pagados al productor del contenido, pero aquéllos que votan el contenido no pagan. En su lugar, el costo del premio es pagado a través de nuevos *tokens*. Alguien puede ingresar en el sistema, votar para pagarle a alguien, y luego irse del sistema con mas dinero del que tenían cuando comenzaron (asumiendo que la valuación del mercado del sistema de Steem se mantenga constante). En otras palabras, las solución de los micropagos provista por Steem provee una experiencia de usuarios similar a muchos sitios web ampliamente utilizados que tienen contenido moderado.
+
+Además, ¡Steem le paga a la gente para determinar a quién se debería pagar!. Este tipo de pensamiento es revolucionario.
+
+> [23] Micropayments: A Viable Business Model
+http://cs.stanford.edu/people/eroberts/cs181/projects/2010-11/Microp
+
+##### El valor está en los enlaces
+
+Internet perdería la basta mayoría de su valor si todos los enlaces entre contenidos fuesen removidos. Es esta relación entre páginas web que permite a Google identificar la mejor receta de tarta de manzanas entre 16 millones de resultados. Sin estos enlaces la única información que Google tendría es la frecuencia de palabras.
+
+Los enlaces pueden tomar varias formas y adaptarse en el tiempo. Cada vez que un usuario vota el contenido en una red social ellos agregan el enlace entre el contenido y ellos mismos. Esto en cambio enlaza al consumidor con el productor a través del contenido. Mientras mas enlaces tenga un red mas valiosa se vuelve la información. Es la conexión intencional y relativa de la información que le da valor.
+
+Una red social puede maximizar el valor extraído de un grupo de contenidos al maximizar la calidad y cantidad de enlaces. Curar contenido es caro y consume tiempo mientras es casi imposible para las computadoras realizar ésto ante la ausencia de enlaces. Steem premia a los usuarios que están entre los primeros en encontrar y enlazar nuevo contenido.
+
+Al incentivar el curado, la red Steem puede usar algoritmos automatizados para extraer la información mas valiosa de un monto masivo de contenido.
+
+##### Resolviendo el problema de abordaje de las criptomonedas
+
+No es fácil meterse en las criptomonedas [24]. Alguien que descubre Bitcoin y quiere probarlo rápidamente se da cuenta de que necesitará registrarse a un *exchange* y cargar su cuenta con una tarjeta de crédito o una transferencia bancaria. ¿Qué sería de la tasa de adopción de Facebook si tuviesemos que bifurcar el dinero y dos formas de identificación?
+
+Steem resuelve este problema dándole a cada uno una forma de recibir pagos por hacer tareas simples pero valiosas. Esto ayudará a distribuír ampliamente los *tokens* STEEM. Esto es muy beneficioso porque las criptomonedas tienen un efecto de red (ej.: mas usuarios lo hacen mas útil; para un ejemplo extremo, consideremos que si Satoshi se hubiese quedado el 100% de Bitcoin para sí, Bitcoin no valdría nada.)
+
+> [24] Dailydot, Jon Southurt, April 2015
+http://www.dailydot.com/opinion/bitcoin-cryptocurrency-adoption-hard
+
+##### Resolviendo el problema de liquidación de las criptomonedas
+
+Una moneda que es difícil de usar o imposible de vender tiene poco valor. Alguien que viene con $1,00 en Bitcoin descubrirá que cuesta mas de $1,00 vender ese Bitcoin. Tendrá que crear una cuenta en un *exchange*, llevar a cabo una validación KYC, y pagar comisiones. Pequeños montos de criptomoneda son como el cambio chico que la gente no está dispuesta a agacharse a juntar del piso.
+
+Los mercaderes dan a los usuarios un camino para convertir rápidamente su criptmoneda en bienes tangibles y servicios. Estos mercaderes necesitan una moneda vinculada a su unidad de cuenta, normalmente dólares. Aceptar una moneda volátil introduce una carga significativa de contabilidad.
+
+Los mercaderes aceptarán cualquier moneda si ésta incrementa sus ventas. Tener una gran base de usuarios con una moneda estable tal como SMD baja la barrera de entrada para los mercaderes. La presencia de mercaderes mejora el sistema al crear una salida del sistema para los usuarios sin tener que entrar en problemas de utilizar un *exchange*.
+
+Otra forma en que la gente puede liquidar sus pequeños montos de criptomoneda que reciben al participa en la plataforma Steem es a través de dar propina a otros. Esto es como dejar el cambio chico como propina al mesero. Cuando mucha gente deja su pequeña propina ésta se añado a un monto significativo. Usted y el mesero se benefician de la propina.
+
+##### Censura
+
+Steem es una red descentralizada que es operada por mineros en jurisdicciones repartidas en el mundo. Todas las acciones de los usuarios son públicamente grabadas en el blockchain, y pueden ser públicamente verificadas. Esto significa que no hay una única entidad que pueda censurar contenido que es valioso para los poseedores de STEEM.
+
+Los sitios web individuales como *steemit.com* puede censurar contenido en su sitio particular, pero el contenido publicado en el blockchain es inherentemente tráfico emitido y sitios en todo el mundo pueden continuar haciéndolo disponible.
+
+La libertad de expresión es la fundación del resto de las libertados e infringir la libertad de expresión socava los únicos medios pacíficos de alcanzar consenso: la discusión. Sin discusión libre los votantes no pueden ser completamente informados y votantes desinformados son una mayor amenaza para la sociedad que perder el derecho a votar. La censura es un medio para robar votos a través de la limitación del discurso público. Steem está comprometido a habilitar la libertad de expresión y construír una sociedad libre.
+
+##### Resolviendo el descubrimiento orgánico a través de la optmización en motores de búsqueda
+
+La mayoría de las criptomonedas generan poco valor para aquellos que no usan la red activamente. Steem, por contraste, genera contenido y alienta a los usuarios a compartirlo. Este contenido es indexado por motores de búsqueda y finalmente traerán valor a un gran número de usuarios pasivos. Este tráfico de búsqueda crea publicidad orgánica para la red Steem y hace crecer el efecto de red.
+
+##### Viraje hacia la atribución basada en blockchain
+
+Internet representa el medio mas fácil para distribuír información en el mundo. Dicho ésto, puede ser un lugar aterrador para los creadores de contenido que quieran ser dueños de su contenido y lo tienen compartido con la atribución correspondiente. En las plataformas de *social media* actuales, la atribución es algo que puede perderse de la noche a la mañana - un video posteado o una imagen pueden ser replicados y recompartidos sin consentimiento o reconocimiento al creador.
+
+Bajo la *social media* basada en blockchain, un creador o autor siempre estaría habilitado para apuntar a un registro público y sello de fecha mostrando una prueba del origen de su contenido. En una circunstancia donde el creador quiera encargarse de quienes hayan compartido el contenido sin permiso o atribución, los registro basados en el blockchain proveen una prueba pública de que el contenido fue posteado por un usuario particular en determinado momento. En el futuro, la atribución basada en blockchain puede ser reconocida por gobiernos por su autenticidad y podría tener peso en la corte, lo cual daría a los creadores de contenido mayores poderes para controlar su trabajo.
+
+Mientras el servicio de sellado de tiempo puede ser construído en casi cualquier blockchain, y muchos esfuerzos existen para armar este tipo de servicios en la red Bitcoin, Steem tiene una ventaja muy útil en este aspecto porque los publicadores de conteniod son "ciudadanos de primera clase" -- el blockchain de Steem está construído desde cero alrrededor del caso de uso de publicación de contenido, lo que permite a los creadores de contenido tener al blockchain validando su contenido en determinado punto en el tiempo simplemente por escribir un post usando las mismas herramientas de creación que usan otros usuarios de Steem.
+
+##### Reemplazando la publicidad con recompenzas de contenido basado en blockchain
+
+Bajo la mayoría de modelos de monetización, los creadores de contenido apalancan la publicidad de una forma y otra. Muchos creadores reconocen cuanto la publicidad puede disminuír el valor de su trabajo la consumidor, tambien los creadores muy a menudo deben buscar retornos en su tiempo a través de la monetización. La publicidad representa una espada de doble filo: Con anuncios, un creador puede generar dinero mas fácil. Sin anuncios, la monetización se hace difícil pero el contenido es mas rico.
+
+Los creadores subiendo contenido a depósitos de *social media* que están conectados a Steem pueden monetizar simplemente por tener su trabajo reconocido (o "enlazado") por la comunidad Steem. Los pagos basados en blockchain son completamente digitales y no tienen intermediarios. Por lo tanto la monetización por premios de contenido basados en blockchain deberían ser mas rápidos y con menos barreras para usar que la monetización por publicidad.
+
+# Conclusion
+
+Steem es un experimento diseñado para hacer frente a los desafíos en las industrias de *social media* y criptomonedas combinando los mejores aspectos de ambas. Steem presenta oportunidades de ganancias a los creadores de contenido y lectores de internet de formas que aún no existían dentro de la industria de *social media*. Dentro de Steem, los individuos reciben ganancias reales en línea que son directamente correlativas a sus contribuciones. Esos premios tendrán un valor de dólar debido a al mercado de descubrimiento de precios y liquidez de Steem, y la gente que sostenga Steem tendrá mas poderes gananciales exclusivos que aquellos que no.
+
 
 
 
