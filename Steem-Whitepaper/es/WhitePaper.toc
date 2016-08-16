@@ -1,0 +1,67 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Introducci\IeC {\'o}n}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}Reconociendo las contribuciones}{2}{subsection.1.1}
+\contentsline {section}{\numberline {2}Formas de contribuir}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Contribuciones de capital}{3}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Steem (STEEM)}{4}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Steem Power (SP)}{4}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}\textit {Steem Dollars} (SMD)}{5}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Minimizando comisiones fraudulentas}{5}{subsubsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}Mitigando ataques de cadencia}{6}{subsubsection.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.3}Minimizando el abuso de conversiones}{6}{subsubsection.2.4.3}
+\contentsline {subsubsection}{\numberline {2.4.4}Liquidez}{6}{subsubsection.2.4.4}
+\contentsline {subsubsection}{\numberline {2.4.5}Deuda sostenible a relaciones de propiedad}{7}{subsubsection.2.4.5}
+\contentsline {subsubsection}{\numberline {2.4.6}Intereses}{7}{subsubsection.2.4.6}
+\contentsline {subsubsection}{\numberline {2.4.7}Definiendo fuentes de precios}{7}{subsubsection.2.4.7}
+\contentsline {subsection}{\numberline {2.5}Contribuciones subjetivas}{8}{subsection.2.5}
+\contentsline {subsubsection}{\numberline {2.5.1}Distribuyendo la moneda}{9}{subsubsection.2.5.1}
+\contentsline {subsubsection}{\numberline {2.5.2}Votando sobre la distribuci\IeC {\'o}n de la moneda}{9}{subsubsection.2.5.2}
+\contentsline {paragraph}{\numberline {2.5.2.1}Complicidad en la votaci\IeC {\'o}n}{10}{paragraph.2.5.2.1}
+\contentsline {subsubsection}{\numberline {2.5.3}Tasa limitada de voto}{11}{subsubsection.2.5.3}
+\contentsline {subsubsection}{\numberline {2.5.4}Pagos retrasados}{11}{subsubsection.2.5.4}
+\contentsline {subsubsection}{\numberline {2.5.5}Distribuci\IeC {\'o}n de pagos}{12}{subsubsection.2.5.5}
+\contentsline {paragraph}{\numberline {2.5.5.1}Recompensas para posts padres}{13}{paragraph.2.5.5.1}
+\contentsline {subsubsection}{\numberline {2.5.6}Pagos}{13}{subsubsection.2.5.6}
+\contentsline {subsection}{\numberline {2.6}Algoritmo de consenso}{13}{subsection.2.6}
+\contentsline {subsubsection}{\numberline {2.6.1}Consenso en Steem}{13}{subsubsection.2.6.1}
+\contentsline {subsubsection}{\numberline {2.6.2}Minando en Steem}{14}{subsubsection.2.6.2}
+\contentsline {paragraph}{\numberline {2.6.2.1}Premios de minado requieren Steem Power}{14}{paragraph.2.6.2.1}
+\contentsline {paragraph}{\numberline {2.6.2.2}Algoritmo de minado}{15}{paragraph.2.6.2.2}
+\contentsline {paragraph}{\numberline {2.6.2.3}Resistencia a \textit {Botnets}}{15}{paragraph.2.6.2.3}
+\contentsline {paragraph}{\numberline {2.6.2.4}Resistencia a grupos o \textit {pools} de minado}{15}{paragraph.2.6.2.4}
+\contentsline {subsubsection}{\numberline {2.6.3}Eliminando comisiones de transacci\IeC {\'o}n}{15}{subsubsection.2.6.3}
+\contentsline {paragraph}{\numberline {2.6.3.1}El problema de las comisiones}{16}{paragraph.2.6.3.1}
+\contentsline {subparagraph}{\numberline {2.6.3.1.1}Los micropagos no funcionan}{16}{subparagraph.2.6.3.1.1}
+\contentsline {subparagraph}{\numberline {2.6.3.1.2}Las comisiones son barreras para el acceso}{17}{subparagraph.2.6.3.1.2}
+\contentsline {subparagraph}{\numberline {2.6.3.1.3}Cambiando las comisiones}{17}{subparagraph.2.6.3.1.3}
+\contentsline {subparagraph}{\numberline {2.6.3.1.4}Ataques de identidad o Ataques Sybil (\textit {Sybil attacks})}{17}{subparagraph.2.6.3.1.4}
+\contentsline {paragraph}{\numberline {2.6.3.2}Iterando mas all\IeC {\'a} de los micropagos}{17}{paragraph.2.6.3.2}
+\contentsline {subparagraph}{\numberline {2.6.3.2.1}Ejemplo de implementaci\IeC {\'o}n}{18}{subparagraph.2.6.3.2.1}
+\contentsline {subparagraph}{\numberline {2.6.3.2.2}Caso de estudio: \textit {Bitcoin}}{18}{subparagraph.2.6.3.2.2}
+\contentsline {subparagraph}{\numberline {2.6.3.2.3}Impacto de capacidad}{19}{subparagraph.2.6.3.2.3}
+\contentsline {subparagraph}{\numberline {2.6.3.2.4}N\IeC {\'u}mero m\IeC {\'a}ximo de usuarios \IeC {\'u}nicos}{19}{subparagraph.2.6.3.2.4}
+\contentsline {subparagraph}{\numberline {2.6.3.2.5}Comparaci\IeC {\'o}n de comisiones}{19}{subparagraph.2.6.3.2.5}
+\contentsline {subparagraph}{\numberline {2.6.3.2.6}Creaci\IeC {\'o}n de cuenta}{19}{subparagraph.2.6.3.2.6}
+\contentsline {subparagraph}{\numberline {2.6.3.2.7}Justificando balances m\IeC {\'\i }nimos}{19}{subparagraph.2.6.3.2.7}
+\contentsline {subparagraph}{\numberline {2.6.3.2.8}Ajustando relaci\IeC {\'o}n de reserva}{20}{subparagraph.2.6.3.2.8}
+\contentsline {subparagraph}{\numberline {2.6.3.2.9}Efectividad relativa a comisiones}{20}{subparagraph.2.6.3.2.9}
+\contentsline {subparagraph}{\numberline {2.6.3.2.10}Renta vs. Compra vs. Tiempo compartido}{21}{subparagraph.2.6.3.2.10}
+\contentsline {paragraph}{\numberline {2.6.3.3}Performance y escalabilidad}{22}{paragraph.2.6.3.3}
+\contentsline {subparagraph}{\numberline {2.6.3.3.1}Escala Reddit}{22}{subparagraph.2.6.3.3.1}
+\contentsline {paragraph}{\numberline {2.6.3.4}Asignaci\IeC {\'o}n y suministro}{22}{paragraph.2.6.3.4}
+\contentsline {subparagraph}{\numberline {2.6.3.4.1}Premios por contribuci\IeC {\'o}n}{22}{subparagraph.2.6.3.4.1}
+\contentsline {subparagraph}{\numberline {2.6.3.4.2}Premios por poder}{23}{subparagraph.2.6.3.4.2}
+\contentsline {subparagraph}{\numberline {2.6.3.4.3}Operaciones de SMS}{23}{subparagraph.2.6.3.4.3}
+\contentsline {subparagraph}{\numberline {2.6.3.4.4}Impacto de Tasa de creaci\IeC {\'o}n de \textit {tokens}}{23}{subparagraph.2.6.3.4.4}
+\contentsline {subparagraph}{\numberline {2.6.3.4.5}Impacto de tasa de creaci\IeC {\'o}n de \textit {tokens} mayor al noventa porciento}{24}{subparagraph.2.6.3.4.5}
+\contentsline {subparagraph}{\numberline {2.6.3.4.6}Sistema contable}{25}{subparagraph.2.6.3.4.6}
+\contentsline {paragraph}{\numberline {2.6.3.5}El poder de Steem}{25}{paragraph.2.6.3.5}
+\contentsline {subparagraph}{\numberline {2.6.3.5.1}Sin micropagos, propina opcional}{25}{subparagraph.2.6.3.5.1}
+\contentsline {subparagraph}{\numberline {2.6.3.5.2}El valor est\IeC {\'a} en los enlaces}{26}{subparagraph.2.6.3.5.2}
+\contentsline {subparagraph}{\numberline {2.6.3.5.3}Resolviendo el problema de abordaje de las criptomonedas}{27}{subparagraph.2.6.3.5.3}
+\contentsline {subparagraph}{\numberline {2.6.3.5.4}Resolviendo el problema de liquidaci\IeC {\'o}n de las criptomonedas}{27}{subparagraph.2.6.3.5.4}
+\contentsline {subparagraph}{\numberline {2.6.3.5.5}Censura}{27}{subparagraph.2.6.3.5.5}
+\contentsline {subparagraph}{\numberline {2.6.3.5.6}Resolviendo el descubrimiento org\IeC {\'a}nico a trav\IeC {\'e}s de la optmizaci\IeC {\'o}n en motores de b\IeC {\'u}squeda}{27}{subparagraph.2.6.3.5.6}
+\contentsline {subparagraph}{\numberline {2.6.3.5.7}Viraje hacia la atribuci\IeC {\'o}n basada en \textit {blockchain}}{28}{subparagraph.2.6.3.5.7}
+\contentsline {subparagraph}{\numberline {2.6.3.5.8}Reemplazando la publicidad con recompenzas de contenido basado en \textit {blockchain}}{28}{subparagraph.2.6.3.5.8}
+\contentsline {section}{\numberline {3}Conclusi\IeC {\'o}n}{28}{section.3}
